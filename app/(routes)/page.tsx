@@ -1,3 +1,5 @@
+import { NextPage } from "next";
+
 import getBillboard from "@/actions/get-billboard";
 import getProducts from "@/actions/get-products";
 import Billboard from "@/components/billboard";
@@ -6,7 +8,7 @@ import Container from "@/components/ui/container";
 
 export const relative = 0;
 
-const HomePage = async () => {
+const HomePage: NextPage = async () => {
   const products = await getProducts({ isFeatured: true });
   const billboard = await getBillboard("b80a6c98-56d7-48ba-a8d1-c70f75f319f6");
 
